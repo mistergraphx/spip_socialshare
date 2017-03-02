@@ -1,0 +1,11 @@
+<entree>
+	<nom>Social Share</nom>
+	<rang>01</rang>
+	<description>Boutons de partage sur les réseaux sociaux</description>
+	<icone>menus/icn/liste_events.png</icone>
+	<parametre nom="titre" class="multilang" label="menus:entree_titre" />
+	<parametre nom="css" label="menus:entree_css" />
+	<parametre nom="afficher_twitter" label="Afficher Twitter" />
+	<parametre nom="afficher_facebook" label="Afficher Facebook" />
+	<parametre nom="afficher_google+" label="Afficher Google+1" />
+</entree>
