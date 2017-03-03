@@ -3,6 +3,8 @@
 * Ajoute au plugin Menu des boutons de partage
 * Pipeline pour ajouter ou modifier des reseaux sociaux depuis un plugin ou skel
 * Liste utilisable indépendament du menu
+* Sprites svg et png
+* Détection du support svg
 
 ## Utilisation dans un squelette
 
