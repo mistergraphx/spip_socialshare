@@ -11,6 +11,21 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
+/**
+ * Inserer les styles
+ *
+ * @param $head
+ *
+ * @return string
+ */
+function socialshare_insert_head_css($head) {
+	include_spip('inc/config');
+	if (lire_config('socialshare/css', 0)) {
+		$head .= '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare.css') . '" />' . "\n";
+	}
+
+	return $head;
+}
 
 function socialshare_social_networks($flux){
 

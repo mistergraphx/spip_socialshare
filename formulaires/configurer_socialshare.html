@@ -1,0 +1,52 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	<form method="post" action="#ENV{action}">
+		<div>
+
+			#ACTION_FORMULAIRE{#ENV{action}}
+
+			<fieldset>
+				<h3 class="legend"><:socialshare:cfg_css_fiedset:></h3>
+				<ul class="editer-groupe">
+					<li class="editer editer_css editer_radio">
+						<p class="explication"><:socialshare:cfg_explication_css:></p>
+						<div class="choix">
+							<input type="checkbox" name="css" class="checkbox" value='on' id='cssn'[(#ENV{css}|oui)checked="checked" ]/>
+							<label for='cssn'>
+								<:socialshare:cfg_label_css:>
+							</label>
+						</div>
+					</li>
+
+				</ul>
+
+			</fieldset>
+			<!-- les reseaux -->
+			<fieldset>
+				<h3 class="legend"><:socialshare:cfg_networks_fieldset:></h3>
+				<p><:socialshare:cfg_networks_explication:></p>
+				[(#SET{socialshare,[(#PIPELINE{social_networks})]})]
+				<B_networks>
+					<ul class="editer-groupe">
+					<BOUCLE_networks(DATA){source table, #GET{socialshare/social_networks}}>
+						<!-- #VALEUR -->
+						<li class="editer editer-[(#CLE)]">
+							<label for="network-[(#CLE)]">[(#VALEUR{label})]</label>
+							<input type="checkbox" name="#CLE" id="socialshare-[(#CLE)]" value="on"[(#ENV{#CLE}|oui)checked="checked" ]/>
+						</li>
+					</BOUCLE_networks>
+					</ul>
+				</B_networks>
+			</fieldset>
+
+
+			<input type="hidden" name="_meta_casier" value="socialshare"/>
+			<p class="boutons">
+				<span class="image_loading">&nbsp;</span><input type="submit" class="submit" value="<:bouton_enregistrer:>"/>
+			</p>
+		</div>
+	</form>
+</div>

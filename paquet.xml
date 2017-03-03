@@ -1,7 +1,7 @@
 <paquet
 	prefix="socialshare"
 	categorie="divers"
-	version="0.0.1"
+	version="0.0.2"
 	etat="dev"
 	compatibilite="[3.0.0;3.1.*]"
 	logo=""
@@ -11,8 +11,10 @@
 	<auteur lien='http://www.mister-graphx.com'>Arnaud B. (Mist. GraphX)</auteur>
 
 	<licence>GNU/GPL</licence>
+	<pipeline nom="insert_head_css" inclure="socialshare_pipelines.php"/>
 	<pipeline nom="social_networks" inclure="socialshare_pipelines.php"/>
 	
 	<script source="javascript/social_share.js" type="public"/>  
 	
+	<menu nom="socialshare" titre="socialshare:socialshare_titre" parent="menu_squelette" icone="images/sociaux-16.png" action="configurer_socialshare"/>
 </paquet>

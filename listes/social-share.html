@@ -2,15 +2,17 @@
 [(#SET{title, #ENV{title}})]
 
 [(#SET{socialshare,[(#PIPELINE{social_networks})]})]
+
 <ul>
 <BOUCLE_listData(DATA){source table, #GET{socialshare/social_networks}}>
+	[(#CONFIG{socialshare/#CLE}|oui)
 	<li>
 		<a  href="[(#VALEUR{sharing_url}|replace{'@url@',#GET{url}}|replace{'@title@',#GET{title}})]"
 			class="js-social-share" target="_blank" rel="nofollow noopener">
 			<span class="#VALEUR{icon_name}" aria-hidden="true"></span>
 			<span class="network_label">#VALEUR{label}</span>
 		</a>
-	</li>
+	</li>]
 </BOUCLE_listData>
 </ul>
 

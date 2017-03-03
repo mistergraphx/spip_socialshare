@@ -1,11 +1,8 @@
 # Social share
 
-
-
-## Menu:
-
-Ajoute au plugin Menu le boutons de partage
-
+* Ajoute au plugin Menu des boutons de partage
+* Pipeline pour ajouter ou modifier des reseaux sociaux depuis un plugin ou skel
+* Liste utilisable indépendament du menu
 
 ## Sources
 
