@@ -34,22 +34,22 @@ function socialshare_social_networks($flux){
 		'facebook' => array(
 			'label'=> 'FaceBook',
 			'sharing_url'=> 'http://www.facebook.com/sharer.php?u=@url@',
-			'icon_name'=> 'icon-facebook'
+			'icon_class'=> 's-icon s-icon-facebook'
 		),
 		'twitter' => array(
 			'label'=> 'Twitter',
 			'sharing_url'=> 'http://twitter.com/home?status=@title@+@url@',
-			'icon_name'=> 'icon-twitter'
+			'icon_class'=> 's-icon s-icon-twitter'
 		),
 		'googleplus' => array(
 			'label'=> 'Google+',
 			'sharing_url'=> 'https://plus.google.com/share?url=@url@',
-			'icon_name'=> 'icon-gplus'
+			'icon_class'=> 's-icon s-icon-google'
 		),
 		'pinterest' => array(
 			'label'=> 'Pinterest',
 			'sharing_url'=> 'https://www.pinterest.com/pin/create/button/?url=@url@&description=@title@',
-			'icon_name'=> 'icon-pinterest'
+			'icon_class'=> 's-icon s-icon-pinterest'
 		),
 	);
 	

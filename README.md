@@ -8,9 +8,14 @@
 
 ## Utilisation dans un squelette
 
-```
+```html
 [<div class="sharing">(#INCLURE{fond=listes/social-share,url=#URL_ARTICLE,title=#TITRE,env})</div>]
 ```
+## Plugins complémentaires
+
+
+https://contrib.spip.net/Liens-sociaux
+https://zone.spip.org/trac/spip-zone/browser/_plugins_/rezosocios/trunk
 
 ## Sources
 

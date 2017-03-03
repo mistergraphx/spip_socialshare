@@ -1,12 +1,21 @@
+/* Layout */
+
+.sharing.inline ul li {
+	display: inline-block;
+}
+.sharing.only-buttons .network_label {
+	display: none;
+}
+
 /*------------------------------------*\
     SVG Sprite Icons
 \*------------------------------------*/
 
-.svg .icon {
+.svg .s-icon {
 	background-image:url(../images/social_icons.svg);
 }
-.icon,
-.no-svg .icon {
+.s-icon,
+.no-svg .s-icon {
 	background-image:url(../images/social_icons.png);
 	background-repeat:no-repeat;
 	display:inline-block;
@@ -14,70 +23,70 @@
 	width:32px;
 	border-radius:3px;
 }
-.icon:hover {
+.s-icon:hover {
 	opacity:0.7;
 }
-.icon-twitter {
+.s-icon-twitter {
 	background-color:#00C4FC;
 	background-position:0px 0px; /* 0 */
 }
-.icon-dribbble {
+.s-icon-dribbble {
 	background-color:#EE7BFF;
 	background-position:-32px 0px; /* 0 */
 }
-.icon-youtube {
+.s-icon-youtube {
 	background-color:#DD4B39;
 	background-position:-64px 0px; /* 0 */
 }
-.icon-flickr {
+.s-icon-flickr {
 	background-color:#F9F9F9;
 	background-position:-96px 0px; /* 0 */
 }
-.icon-forrst {
+.s-icon-forrst {
 	background-color:#13A562;
 	background-position:0px -32px; /* 32 */
 }
-.icon-facebook {
+.s-icon-facebook {
 	background-color:#3350AE;
 	background-position:-32px -32px; /* 32 */
 }
-.icon-vimeo {
+.s-icon-vimeo {
 	background-color:#00C4FC;
 	background-position:-64px -32px; /* 32 */
 }
-.icon-rss {
+.s-icon-rss {
 	background-color:#FF7427;
 	background-position:-96px -32px; /* 32 */
 }
-.icon-google {
+.s-icon-google {
 	background-color:#DD4B39;
 	background-position:-0px -64px; /* 64 */
 }
-.icon-linkedin {
+.s-icon-linkedin {
 	background-color:#0086D2;
 	background-position:-32px -64px; /* 64 */
 }
-.icon-tumblr {
+.s-icon-tumblr {
 	background-color:#2C4762;
 	background-position:-64px -64px; /* 64 */
 }
-.icon-skype {
+.s-icon-skype {
 	background-color:#00C4FC;
 	background-position:-96px -64px; /* 64 */
 }
-.icon-github {
+.s-icon-github {
 	background-color:#555;
 	background-position:-0px -96px; /* 96 */
 }
-.icon-githubcat {
+.s-icon-githubcat {
 	background-color:#555;
 	background-position:-32px -96px; /* 96 */
 }
-.icon-pinterest {
+.s-icon-pinterest {
 	background-color:#DD4B39;
 	background-position:-64px -96px; /* 96 */
 }
-.icon-feedburner {
+.s-icon-feedburner {
 	background-color:#0086D2;
 	background-position:-96px -96px; /* 96 */
 }
