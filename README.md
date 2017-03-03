@@ -4,6 +4,12 @@
 * Pipeline pour ajouter ou modifier des reseaux sociaux depuis un plugin ou skel
 * Liste utilisable indépendament du menu
 
+## Utilisation dans un squelette
+
+```
+[<div class="sharing">(#INCLURE{fond=listes/social-share,url=#URL_ARTICLE,title=#TITRE,env})</div>]
+```
+
 ## Sources
 
 * https://simplesharebuttons.com/html-share-buttons/
