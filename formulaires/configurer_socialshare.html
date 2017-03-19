@@ -5,9 +5,7 @@
 
 	<form method="post" action="#ENV{action}">
 		<div>
-
 			#ACTION_FORMULAIRE{#ENV{action}}
-
 			<fieldset>
 				<h3 class="legend"><:socialshare:cfg_css_fiedset:></h3>
 				<ul class="editer-groupe">
@@ -20,18 +18,16 @@
 							</label>
 						</div>
 					</li>
-
 				</ul>
-
 			</fieldset>
 
 			<fieldset>
 				<h3 class="legend"><:socialshare:cfg_networks_fieldset:></h3>
 				<p><:socialshare:cfg_networks_explication:></p>
-				[(#SET{socialshare,[(#PIPELINE{social_networks})]})]
+				[(#SET{social_networks, #VAL|lister_partages })]
 				<B_networks>
 					<ul class="editer-groupe">
-					<BOUCLE_networks(DATA){source table, #GET{socialshare/social_networks}}>
+					<BOUCLE_networks(DATA){source table, #GET{social_networks}}>
 						<!-- #VALEUR -->
 						<li class="editer editer-[(#CLE)]">
 							<label for="network-[(#CLE)]">[(#VALEUR{label})]</label>
@@ -41,7 +37,6 @@
 					</ul>
 				</B_networks>
 			</fieldset>
-
 
 			<input type="hidden" name="_meta_casier" value="socialshare"/>
 			<p class="boutons">

@@ -27,33 +27,18 @@ function socialshare_insert_head_css($head) {
 	return $head;
 }
 
+function socialshare_ieconfig_metas($table){
+	$table['socialshare']['titre'] = _T('socialshare:socialshare_titre');
+	$table['socialshare']['icone'] = 'prive/theme/spip/images/socialshare-16.png';
+	$table['socialshare']['metas_serialize'] = 'socialshare';
+	return $table;
+}
+/**
+ * pipeline social_networks
+ *
+ * 
+*/
 function socialshare_social_networks($flux){
-
-
-	$flux['social_networks'] = array(
-		'facebook' => array(
-			'label'=> 'FaceBook',
-			'sharing_url'=> 'http://www.facebook.com/sharer.php?u=@url@',
-			'icon_class'=> 's-icon s-icon-facebook'
-		),
-		'twitter' => array(
-			'label'=> 'Twitter',
-			'sharing_url'=> 'http://twitter.com/home?status=@title@+@url@',
-			'icon_class'=> 's-icon s-icon-twitter'
-		),
-		'googleplus' => array(
-			'label'=> 'Google+',
-			'sharing_url'=> 'https://plus.google.com/share?url=@url@',
-			'icon_class'=> 's-icon s-icon-google'
-		),
-		'pinterest' => array(
-			'label'=> 'Pinterest',
-			'sharing_url'=> 'https://www.pinterest.com/pin/create/button/?url=@url@&description=@title@',
-			'icon_class'=> 's-icon s-icon-pinterest'
-		),
-	);
-	
-	
 	
 	return $flux;
 }

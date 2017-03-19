@@ -1,10 +1,9 @@
 [(#SET{url, [(#ENV{url}|url_absolue|urlencode)]})]
 [(#SET{title, #ENV{title}})]
-
-[(#SET{socialshare,[(#PIPELINE{social_networks})]})]
-
+[(#SET{social_networks, #VAL|lister_partages })]
+<B_listData>
 <ul>
-<BOUCLE_listData(DATA){source table, #GET{socialshare/social_networks}}>
+<BOUCLE_listData(DATA){source table, #GET{social_networks}}>
 	[(#CONFIG{socialshare/#CLE}|oui)
 	<li>
 		<a  href="[(#VALEUR{sharing_url}|replace{'@url@',#GET{url}}|replace{'@title@',#GET{title}})]"
@@ -15,4 +14,4 @@
 	</li>]
 </BOUCLE_listData>
 </ul>
-
+</B_listData>
