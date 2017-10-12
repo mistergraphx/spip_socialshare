@@ -12,8 +12,8 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 /*
- * function lister_sharers
- * @param $arg
+ * function lister_partages
+ * 
  */
 
 function lister_partages() {

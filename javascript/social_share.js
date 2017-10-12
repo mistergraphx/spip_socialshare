@@ -22,8 +22,6 @@ if (supportsSVG()) {
 }
 
 jQuery(document).ready(function($){
-
-
 	$(".js-social-share").on("click", function(e) {
 		e.preventDefault();
 		windowPopup($(this).attr("href"), 500, 300);
