@@ -62,6 +62,11 @@ Donc l'url serait :
 
 ## Changelogs
 
+0.0.5 :
+
+- [X] - correction sur les urls fournies lors de l'ajout passage au https
+- [X] Ajout du reseaux pinterest , ajout d'un parametre media
+
 0.0.3 :
 
 - [X] Reseaux default et pipeline, ajout d'une fonction lister_partages

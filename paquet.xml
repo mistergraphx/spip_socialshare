@@ -1,7 +1,7 @@
 <paquet
 	prefix="socialshare"
 	categorie="divers"
-	version="0.0.4"
+	version="0.0.5"
 	etat="dev"
 	compatibilite="[3.0.0;3.2.*]"
 	logo="prive/theme/spip/images/socialshare-32.png"
