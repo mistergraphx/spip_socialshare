@@ -22,12 +22,12 @@ function lister_partages() {
 	$default = array(
 		'facebook' => array(
 			'label'=> 'FaceBook',
-			'sharing_url'=> 'http://www.facebook.com/sharer.php?u=@url@',
+			'sharing_url'=> 'https://www.facebook.com/sharer.php?u=@url@',
 			'icon_class'=> 's-icon s-icon-facebook'
 		),
 		'twitter' => array(
 			'label'=> 'Twitter',
-			'sharing_url'=> 'http://twitter.com/home?status=@title@+@url@',
+			'sharing_url'=> 'https://twitter.com/home?status=@title@+@url@',
 			'icon_class'=> 's-icon s-icon-twitter'
 		),
 		'googleplus' => array(
@@ -37,7 +37,7 @@ function lister_partages() {
 		),
 		'pinterest' => array(
 			'label'=> 'Pinterest',
-			'sharing_url'=> 'https://www.pinterest.com/pin/create/button/?url=@url@&description=@title@',
+			'sharing_url'=> 'https://www.pinterest.com/pin/create/button/?url=@url@&media=@media@',
 			'icon_class'=> 's-icon s-icon-pinterest'
 		),
 	);

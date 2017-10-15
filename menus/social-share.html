@@ -4,6 +4,7 @@
 -->]
 [(#SET{url,[(#ENV*{env}|table_valeur{url}|url_absolue|urlencode)]})]
 [(#SET{title,[(#ENV*{env}|table_valeur{title})]})]
+[(#SET{media,[(#ENV*{env}|table_valeur{media})]})]
 [(#ENV{appel_formulaire}|oui)
 	<div class="titre">Partagez</div>
 	<div class="infos">Liens de partage</div>
@@ -11,5 +12,5 @@
 <BOUCLE_appel(CONDITION){si #ENV{appel_menu}|oui}>
 <li class="menu-entree item[ (#ENV{css})]">
 	[<a href="#" class="sharing-title">(#ENV{titre})</a>]
-	<INCLURE{fond=listes/social-share, title=#GET{title}, url=#GET{url}, env} />
+	<INCLURE{fond=listes/social-share, title=#GET{title}, url=#GET{url}, media=#GET{media}, env} />
 </BOUCLE_appel>
