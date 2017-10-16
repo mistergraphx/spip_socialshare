@@ -11,7 +11,7 @@
 ### Liste des boutons de partage
 
 ```html
-[<div class="sharing">(#INCLURE{fond=listes/social-share,url=#URL_ARTICLE,title=#TITRE,env})</div>]
+[<div class="sharing">(#INCLURE{fond=listes/social-share,url=#URL_ARTICLE,title=#TITRE,media=#LOGO_ARTICLE,env})</div>]
 ```
 
 ### Appel du menu de partage
@@ -19,7 +19,7 @@
 Passer en paramètre l'url de l'objet a partager 
 
 ```html
-[(#INCLURE{fond=inclure/menu,identifiant=nav_share, url=#URL_PRODUIT, env})]
+[(#INCLURE{fond=inclure/menu,identifiant=nav_share, url=#URL_PRODUIT, media=#LOGO_ARTICLE env})]
 ```
 
 ## Plugins complémentaires
@@ -27,6 +27,9 @@ Passer en paramètre l'url de l'objet a partager
 
 https://contrib.spip.net/Liens-sociaux
 https://zone.spip.org/trac/spip-zone/browser/_plugins_/rezosocios/trunk
+
+Logo auto trouve une image/document si le logo n'éxiste pas :
+https://zone.spip.org/trac/spip-zone/browser/_plugins_/logo_auto/branches/logo_auto_php
 
 ## Sources
 
@@ -58,6 +61,7 @@ Donc l'url serait :
 			
 - [] Vérifier le patage sur Twitter. Twitter utilise WebIntent depuis quelques temps : https://dev.twitter.com/web/tweet-button/web-intent
 - [] Ajouter SeenThis `http://seenthis.net/#ajouter=%t&url_site=%u&extrait=%d`
+
 
 
 ## Changelogs
