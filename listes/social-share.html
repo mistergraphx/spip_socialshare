@@ -8,7 +8,7 @@
 	[(#CONFIG{socialshare/#CLE}|oui)
 	<li>
 		<a  href="[(#VALEUR{sharing_url}|replace{'@url@',#GET{url}}|replace{'@title@',#GET{title}}|replace{'@media@',#GET{media}})]"
-			class="js-social-share" target="_blank" rel="nofollow noopener">
+			class="js-social-share" title="<:socialshare:partager_sur{network=#VALEUR{label}}:>" target="_blank" rel="nofollow noopener">
 			<span class="#VALEUR{icon_class}" aria-hidden="true"></span>
 			<span class="network_label">#VALEUR{label}</span>
 		</a>

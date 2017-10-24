@@ -11,7 +11,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'cfg_networks_fieldset'	=> 'Choix des Reseaux de partage',
 	'cfg_networks_explication'=>'Cochez les réseaux de partages que vous souhaitez afficher',
 	'cfg_titre_configurer'=>'Configurer Social Share',
-	
+	// P
+	'partager_sur'	=> 'Partager sur @network@',
+
 	// S
 	'socialshare_titre'=>'Social Share',
 	'share_facebook'	=> 'Partagez sur Facebook',

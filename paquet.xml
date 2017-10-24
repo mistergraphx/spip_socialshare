@@ -1,10 +1,10 @@
 <paquet
 	prefix="socialshare"
 	categorie="divers"
-	version="0.0.5"
-	etat="dev"
+	version="1.0.6"
+	etat="test"
 	compatibilite="[3.0.0;3.2.*]"
-	logo="prive/theme/spip/images/socialshare-32.png"
+	logo="prive/themes/spip/images/socialshare-32.png"
 	documentation=""
 >
 	<nom>Social Share</nom>
@@ -19,5 +19,5 @@
 	
 	<script source="javascript/social_share.js" type="public"/>  
 	
-	<menu nom="socialshare" titre="socialshare:socialshare_titre" parent="menu_squelette" icone="images/sociaux-16.png" action="configurer_socialshare"/>
+	<menu nom="socialshare" titre="socialshare:socialshare_titre" parent="menu_squelette" icone="images/socialshare-16.png" action="configurer_socialshare"/>
 </paquet>

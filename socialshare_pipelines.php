@@ -29,7 +29,7 @@ function socialshare_insert_head_css($head) {
 
 function socialshare_ieconfig_metas($table){
 	$table['socialshare']['titre'] = _T('socialshare:socialshare_titre');
-	$table['socialshare']['icone'] = 'prive/theme/spip/images/socialshare-16.png';
+	$table['socialshare']['icone'] = 'prive/themes/spip/images/socialshare-16.png';
 	$table['socialshare']['metas_serialize'] = 'socialshare';
 	return $table;
 }
