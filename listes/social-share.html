@@ -1,5 +1,5 @@
-[(#SET{url, [(#ENV{url})]})]
-[(#SET{title, #ENV{title}})]
+[(#SET{url, #ENV{url}|url_absolue})]
+[(#SET{title, #ENV{title}|attribut_html|urlencode})]
 [(#SET{media, #ENV{media}})]
 [(#SET{social_networks, #VAL|lister_partages })]
 <B_listData>

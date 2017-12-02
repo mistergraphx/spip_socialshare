@@ -66,6 +66,10 @@ Donc l'url serait :
 
 ## Changelogs
 
+1.0.6 :
+
+- Ajout d'un attribut title sur les liens de partage + chaine de langue
+
 0.0.5 :
 
 - [X] - correction sur les urls fournies lors de l'ajout passage au https
