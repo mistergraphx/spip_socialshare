@@ -2,7 +2,7 @@
 
 
 -->]
-[(#SET{url,[(#ENV*{env}|table_valeur{url}|url_absolue|urlencode)]})]
+[(#SET{url,[(#ENV*{env}|table_valeur{url})]})]
 [(#SET{title,[(#ENV*{env}|table_valeur{title})]})]
 [(#SET{media,[(#ENV*{env}|table_valeur{media})]})]
 [(#ENV{appel_formulaire}|oui)
