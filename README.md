@@ -6,6 +6,77 @@
 * Sprites svg et png
 * Détection du support svg
 
+Le plugin ne gère pas les métas necessaires au réseaux sociaux pour correctement remplir les informations de partage.
+
+Elles sont donc à gérer soit par vous même dans vos squelettes, ou en utilisant [le plugin meta-plus](https://contrib.spip.net/Metas-4845)
+
+
+## Personalisation
+
+### Assets, css, svg, png
+
+le plugin inssère les css nécessaires, l'insertion est désactivable dans la configuration du plugin, dans le cas d'un set d'icone externe.
+
+Ajouter , personaliser les logos/icones des liens de partage
+
+Le sprite svg ainsi que le sprite png (si vous souhaitez gérer les navigateurs ne supportant pas le svg), sont surchargeables depuis le dossier squelette en créant vos propres images social_icons.png.
+
+### Description d'un réseaux
+
+```php
+
+'facebook' => array(
+	'label'=> 'FaceBook',
+	'sharing_url'=> 'https://www.facebook.com/sharer.php?u=@url@',
+	'icon_class'=> 's-icon s-icon-facebook'
+),
+
+```
+
+les variables uilisables pour construire les liens de partage :
+
+| Variable | Description |
+|--|--|
+| `@url@`| Url de l'objet à partager passé en parametre|
+| `@title@` | Titre du partage |
+| `@media@` | Un media |
+
+On peut donc ajouter ensuite depuis la pipeline ses propres réseaux de partage, ils seront activables depuis la config du plugin.
+
+### Pipeline `social_networks()`
+
+
+Ajouter au paquet xml de votre plugin/theme
+
+```xml
+<pipeline nom="social_networks" inclure="prefix_plugin_pipelines.php"/>
+
+```
+
+puis dans votre fichier pipeline, vous pouvez ainsi ajouter ou surcharger
+les liens de partage, on peut ainsi utiliser un système d'icone externe au plugin si besoin.
+
+```php
+function prefix_plugin_social_networks($flux){
+
+	$flux['social_networks']  = array(
+		'facebook' => array(
+			'icon_class'=> 'icon icon-facebook'
+		),
+		'twitter' => array(
+			'icon_class'=> 'icon icon-twitter'
+		),
+		'googleplus' => array(
+			'icon_class'=> 'icon icon-gplus'
+		),
+		'pinterest' => array(
+			'icon_class'=> 'icon icon-pinterest'
+		),
+	);
+```
+
+
+
 ## Utilisation dans un squelette
 
 ### Liste des boutons de partage
@@ -16,7 +87,7 @@
 
 ### Appel du menu de partage
 
-Passer en paramètre l'url de l'objet a partager 
+Passer en paramètre l'url de l'objet a partager
 
 ```html
 [(#INCLURE{fond=inclure/menu,identifiant=nav_share, url=#URL_PRODUIT, media=#LOGO_ARTICLE env})]
@@ -61,7 +132,7 @@ https://developers.facebook.com/docs/sharing/reference/share-dialog
 https://developers.facebook.com/docs/sharing/reference/share-dialog#advancedtopics
 Donc l'url serait :
 `https://www.facebook.com/dialog/share?app_id=<app_id>&display=popup&href=<url_encoded>`
-			
+
 - [] Vérifier le patage sur Twitter. Twitter utilise WebIntent depuis quelques temps : https://dev.twitter.com/web/tweet-button/web-intent
 - [] Ajouter SeenThis `http://seenthis.net/#ajouter=%t&url_site=%u&extrait=%d`
 
@@ -86,5 +157,5 @@ Donc l'url serait :
 		on ajouter rel=noopener noreferrer
 		(http://zone.spip.org/trac/spip-zone/browser/_plugins_/links/links.js)
 		https://www.mail-archive.com/spip-zone@rezo.net/msg40738.html
-		
+
 - [x] Ajouter le partage sur Pinterest : https://gist.github.com/chrisjlee/5196139
