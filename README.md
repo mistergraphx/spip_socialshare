@@ -36,6 +36,9 @@ https://zone.spip.org/trac/spip-zone/browser/_plugins_/logo_auto/branches/logo_a
 * https://simplesharebuttons.com/html-share-buttons/
 * https://github.com/bradvin/social-share-urls
 * https://toddmotto.com/progressively-enhanced-svg-sprite-icons/
+* Pinterst dev :
+	* https://developers.pinterest.com/tools/widget-builder/?type=pin&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F189010515587413425%2F
+	* https://developers.pinterest.com/
 
 ## Todo
 
