@@ -13,6 +13,7 @@
 
 	<licence>GNU/GPL</licence>
 	<pipeline nom="insert_head_css" inclure="socialshare_pipelines.php"/>
+	<pipeline nom="affichage_final" inclure="socialshare_pipelines.php"/>
 	<pipeline nom="ieconfig_metas" inclure="socialshare_pipelines.php" />
 
 	<pipeline nom="social_networks" inclure="socialshare_pipelines.php"/>

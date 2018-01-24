@@ -11,20 +11,53 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
-/**
- * Inserer les styles
- *
- * @param $head
- *
- * @return string
- */
-function socialshare_insert_head_css($head) {
-	include_spip('inc/config');
-	if (lire_config('socialshare/css', 0)) {
-		$head .= '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare.css') . '" />' . "\n";
+
+function socialshare_affichage_final($page){
+	// ne pas insérer le svg sur toute les pages
+	// si ce n'est pas nécessaire
+	if(strpos($page,'class="socialshare"',0)){
+			// Methode insertion svg symbols
+			// on place le svg après la balise body
+			include_spip('inc/config');
+			if (lire_config('socialshare/insert_svg_symbols', 0)) {
+				$body = preg_match("/(<body.*?>)/u", $page, $matches);
+				if ( $body_pos = strpos($page,$matches[0]) ){
+					lire_fichier(find_in_path('images/symbols.svg'),$svg);
+					$page = substr_replace($page, $matches[0].$svg , $body_pos, 0);
+				}
+			}
 	}
 
-	return $head;
+	return $page;
+}
+
+
+/**
+ * Insertion css
+ * repris de webfonts, on place les styles en premier
+ *
+ * @param $flux
+ * @return string
+ *
+ */
+function socialshare_insert_head_css($flux) {
+	include_spip('inc/config');
+	if (lire_config('socialshare/css', 0)) {
+			static $done = false;
+			$styles = '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare.css') . '" />' . "\n";
+			if (!$done){
+						// le placer avant les autres CSS du flux
+						if (($p = strpos($flux,"<link"))!==false){
+							$flux = substr_replace($flux,$styles,$p,0);
+						// sinon a la fin
+						}else{
+							$flux .= $styles;
+						}
+
+				$done = true;
+			}
+	}
+	return $flux;
 }
 
 function socialshare_ieconfig_metas($table){
@@ -36,9 +69,9 @@ function socialshare_ieconfig_metas($table){
 /**
  * pipeline social_networks
  *
- * 
+ *
 */
 function socialshare_social_networks($flux){
-	
+
 	return $flux;
 }
