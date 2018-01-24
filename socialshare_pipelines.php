@@ -19,7 +19,7 @@ function socialshare_affichage_final($page){
 			// Methode insertion svg symbols
 			// on place le svg après la balise body
 			include_spip('inc/config');
-			if (lire_config('socialshare/insert_svg_symbols', 0)) {
+			if (lire_config('socialshare/method_insert',null,true)=='svg_symbols' ) {
 				$body = preg_match("/(<body.*?>)/u", $page, $matches);
 				if ( $body_pos = strpos($page,$matches[0]) ){
 					lire_fichier(find_in_path('images/symbols.svg'),$svg);
@@ -42,7 +42,7 @@ function socialshare_affichage_final($page){
  */
 function socialshare_insert_head_css($flux) {
 	include_spip('inc/config');
-	if (lire_config('socialshare/css', 0)) {
+	if (lire_config('socialshare/method_insert',null,true)=='svg_sprite') {
 			static $done = false;
 			$styles = '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare.css') . '" />' . "\n";
 			if (!$done){

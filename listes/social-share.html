@@ -2,10 +2,6 @@
 [(#SET{title, #ENV{title}|attribut_html})]
 [(#SET{media, #ENV{media}})]
 [(#SET{social_networks, #VAL|lister_partages })]
-
-
-
-
 <B_listData>
 <ul class="socialshare">
 <BOUCLE_listData(DATA){source table, #GET{social_networks}}>
@@ -14,7 +10,7 @@
 		<a  href="[(#VALEUR{sharing_url}|replace{'@url@',#GET{url}}|replace{'@title@',#GET{title}}|replace{'@media@',#GET{media}})]"
 			class="js-social-share" title="<:socialshare:partager_sur{network=#VALEUR{label}}:>"
 			target="_blank" rel="nofollow noopener">
-			[(#SOCIAL_ICON{#CLE}|print_r{1})]
+			[(#SOCIAL_ICON{#CLE})]
 			[<span class="network_label">(#VALEUR{label})</span>]
 		</a>
 	</li>]

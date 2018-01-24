@@ -19,7 +19,6 @@ de partage svg#symbol ou span.icon
 
 on passe en parametre la clé du tableau issu de la pipeline
 
-
 */
 function balise_SOCIAL_ICON_dist($p){
 	$social_network = interprete_argument_balise(1, $p);
@@ -37,7 +36,7 @@ function calculer_balise_SOCIAL_ICON($social_network){
 	$network = $sharers[$social_network];
 	$class = $network['icon_class'];
 
-	if(lire_config('socialshare/insert_svg_symbols')){
+	if(lire_config('socialshare/method_insert')=='svg_symbols'){
 		$markup = "<svg class=\"$class\"><use xlink:href=\"#$social_network\"></use></svg>";
 	}else{
 		$markup = "<span class=\"$class\" aria-hidden=\"true\"></span>";
@@ -70,7 +69,7 @@ function lister_partages() {
 		'googleplus' => array(
 			'label'=> 'Google+',
 			'sharing_url'=> 'https://plus.google.com/share?url=@url@',
-			'icon_class'=> 's-icon s-icon-google'
+			'icon_class'=> 's-icon s-icon-googleplus'
 		),
 		'pinterest' => array(
 			'label'=> 'Pinterest',
