@@ -1,18 +1,24 @@
 [(#SET{url, #ENV{url}|url_absolue|urlencode})]
-[(#SET{title, #ENV{title}|attribut_html|urlencode})]
+[(#SET{title, #ENV{title}|attribut_html})]
 [(#SET{media, #ENV{media}})]
 [(#SET{social_networks, #VAL|lister_partages })]
+
+
+
+
 <B_listData>
-<ul>
+<ul class="socialshare">
 <BOUCLE_listData(DATA){source table, #GET{social_networks}}>
 	[(#CONFIG{socialshare/#CLE}|oui)
 	<li>
 		<a  href="[(#VALEUR{sharing_url}|replace{'@url@',#GET{url}}|replace{'@title@',#GET{title}}|replace{'@media@',#GET{media}})]"
-			class="js-social-share" title="<:socialshare:partager_sur{network=#VALEUR{label}}:>" target="_blank" rel="nofollow noopener">
-			<span class="#VALEUR{icon_class}" aria-hidden="true"></span>
-			<span class="network_label">#VALEUR{label}</span>
+			class="js-social-share" title="<:socialshare:partager_sur{network=#VALEUR{label}}:>"
+			target="_blank" rel="nofollow noopener">
+			[(#SOCIAL_ICON{#CLE}|print_r{1})]
+			[<span class="network_label">(#VALEUR{label})</span>]
 		</a>
 	</li>]
 </BOUCLE_listData>
 </ul>
 </B_listData>
+#FILTRE{trim}
