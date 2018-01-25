@@ -79,7 +79,6 @@ function fontface_declaration($font, $formats = array('.woff'=>'woff','.woff2'=>
 	$i = 1;
 	foreach($formats as $extension => $format){
 		$file_path = find_in_path("polices/socialshare/font/".$font['file'].$extension);
-		var_dump($file_path);
 		$font_files .="url('".$file_path."') format('$format')";
 		($i < count($formats)) ? $font_files .=", " : $font_files .=";";
 		$i++;
