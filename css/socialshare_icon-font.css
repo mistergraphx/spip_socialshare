@@ -1,0 +1,47 @@
+
+[class^="s-icon-"]:before, [class*=" s-icon-"]:before {
+ font-family: "socialshare";
+ font-style: normal;
+ font-weight: normal;
+ speak: none;
+
+ display: inline-block;
+ text-decoration: inherit;
+ width: 1em;
+ margin-right: .2em;
+ text-align: center;
+ /* opacity: .8; */
+
+ /* For safety - reset parent styles, that can break glyph codes*/
+ font-variant: normal;
+ text-transform: none;
+
+ /* fix buttons height, for twitter bootstrap */
+ line-height: 1em;
+
+ /* Animation center compensation - margins should be symmetric */
+ /* remove if not needed */
+ margin-left: .2em;
+
+ /* you can be more comfortable with increased icons size */
+ /* font-size: 120%; */
+
+ /* Font smoothing. That was taken from TWBS */
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+
+ /* Uncomment for 3D effect */
+ /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.s-icon-dribble:before { content: '\e800'; } /* '' */
+.s-icon-facebook:before { content: '\e801'; } /* '' */
+.s-icon-github:before { content: '\e802'; } /* '' */
+.s-icon-googleplus:before { content: '\e803'; } /* '' */
+.s-icon-linkedin:before { content: '\e804'; } /* '' */
+.s-icon-octocat:before { content: '\e805'; } /* '' */
+.s-icon-pinterest:before { content: '\e806'; } /* '' */
+.s-icon-seenthis:before { content: '\e807'; } /* '' */
+.s-icon-twitter:before { content: '\e808'; } /* '' */
+.s-icon-viadeo:before { content: '\e809'; } /* '' */
+.s-icon-youtube:before { content: '\e80a'; } /* '' */

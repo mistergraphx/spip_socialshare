@@ -35,16 +35,67 @@ function calculer_balise_SOCIAL_ICON($social_network){
 	$sharers = lister_partages();
 	$network = $sharers[$social_network];
 	$class = $network['icon_class'];
-
+	$size = 8;
 	if(lire_config('socialshare/method_insert')=='svg_symbols'){
-		$markup = "<svg class=\"$class\"><use xlink:href=\"#$social_network\"></use></svg>";
+		$markup = "<svg class=\"$class\" viewBox=\"0 0 4 4\"><use xlink:href=\"#$social_network\"></use></svg>";
 	}else{
 		$markup = "<span class=\"$class\" aria-hidden=\"true\"></span>";
 	}
 
 	return $markup;
 }
+/*
+ * fontface_declaration
+ * extrait de webfonts2
+ *
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('OpenSans-Italic-webfont.eot');
+    src: url('OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Italic-webfont.woff2') format('woff2'),
+         url('OpenSans-Italic-webfont.woff') format('woff'),
+         url('OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('OpenSans-Italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+@param $font array family|file|weight|style
+@param $formats array extension|format default
+
+*/
+
+function fontface_declaration($font, $formats = array('.woff'=>'woff','.woff2'=>'woff2','.ttf'=>'truetype')){
+
+	$default = array(
+		'family'=>'Dutissimo',
+		'file'=>'squelettes-dist/polices/dutissimo',
+		'weight'=>'400',
+		'style'=>'normal'
+	);
+	$font = array_merge($default,$font);
+	$font_files = '';
+	$i = 1;
+	foreach($formats as $extension => $format){
+		$file_path = find_in_path("polices/socialshare/font/".$font['file'].$extension);
+		var_dump($file_path);
+		$font_files .="url('".$file_path."') format('$format')";
+		($i < count($formats)) ? $font_files .=", " : $font_files .=";";
+		$i++;
+	}
+
+	$declaration = <<<EOT
+@font-face {
+    font-family: '{$font['family']}';
+	src: $font_files
+    font-weight:{$font['weight']};
+    font-style:{$font['style']};
+}
+EOT;
+
+	return $declaration;
+}
 
 
 /*

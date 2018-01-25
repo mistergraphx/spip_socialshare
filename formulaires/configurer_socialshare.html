@@ -15,11 +15,21 @@
 
  -->]
 				<h3 class="legend"><:socialshare:cfg_css_fiedset:></h3>
+				<p class="explcation">
+					<ul>
+						<li>Pas d'insertion : pas d'insertion,
+							 vous utilisez une icone font externe, ou profitez des celle de votre thème/framework.</li>
+						<li>Icon font : utilisation de l'icon font fournie par le plugins
+								eidtable sur fontello.com
+						</li>
+						<li>Svg symbols: insertion inline des icones svg</li>
+					</ul>
+				</p>
 				<div class="editer-groupe">
 					<div class="editer">
 						<select name="method_insert">
 								<option value="none"[ (#ENV{method_insert}|=={none}|oui)selected]>Pas d'insertion</option>
-								<option value="svg_sprite"[ (#ENV{method_insert}|=={svg_sprite}|oui)selected]>Svg Sprite</option>
+								<option value="iconfont"[ (#ENV{method_insert}|=={iconfont}|oui)selected]>Icon Font</option>
 								<option value="svg_symbols"[ (#ENV{method_insert}|=={svg_symbols}|oui)selected]>Svg symbols</option>
 						</select>
 					</div>

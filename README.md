@@ -104,6 +104,7 @@ https://zone.spip.org/trac/spip-zone/browser/_plugins_/logo_auto/branches/logo_a
 
 ## Sources
 
+* https://developers.google.com/+/web/share/#sharelink
 * https://simplesharebuttons.com/html-share-buttons/
 * https://github.com/bradvin/social-share-urls
 * https://toddmotto.com/progressively-enhanced-svg-sprite-icons/

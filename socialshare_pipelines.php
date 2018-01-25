@@ -22,7 +22,7 @@ function socialshare_affichage_final($page){
 			if (lire_config('socialshare/method_insert',null,true)=='svg_symbols' ) {
 				$body = preg_match("/(<body.*?>)/u", $page, $matches);
 				if ( $body_pos = strpos($page,$matches[0]) ){
-					lire_fichier(find_in_path('images/symbols.svg'),$svg);
+					lire_fichier(find_in_path('images/socialshare_symbols.svg'),$svg);
 					$page = substr_replace($page, $matches[0].$svg , $body_pos, 0);
 				}
 			}
@@ -30,6 +30,7 @@ function socialshare_affichage_final($page){
 
 	return $page;
 }
+
 
 
 /**
@@ -41,21 +42,28 @@ function socialshare_affichage_final($page){
  *
  */
 function socialshare_insert_head_css($flux) {
+	static $done = false;
 	include_spip('inc/config');
-	if (lire_config('socialshare/method_insert',null,true)=='svg_sprite') {
-			static $done = false;
-			$styles = '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare.css') . '" />' . "\n";
-			if (!$done){
-						// le placer avant les autres CSS du flux
-						if (($p = strpos($flux,"<link"))!==false){
-							$flux = substr_replace($flux,$styles,$p,0);
-						// sinon a la fin
-						}else{
-							$flux .= $styles;
-						}
-
-				$done = true;
-			}
+	// Base styles
+	$styles = '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare.css') . '" />' . "\n";
+	if (lire_config('socialshare/method_insert',null,true)=='iconfont') {
+			$fontface = fontface_declaration(array(
+				'family'=>'socialshare',
+				'file'=>'socialshare',
+				'weight'=>'normal',
+				'style'=>'normal'
+			));
+			$styles .= "<style>$fontface</style>";
+			$styles .= '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare_icon-font.css') . '" />' . "\n";
+	}
+	if (!$done){
+				// le placer avant les autres CSS du flux
+				if (($p = strpos($flux,"<link"))!==false){
+					$flux = substr_replace($flux,$styles,$p,0);
+				}else{ // sinon a la fin
+					$flux .= $styles;
+				}
+		$done = true;
 	}
 	return $flux;
 }
