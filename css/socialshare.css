@@ -9,17 +9,21 @@
 	vertical-align: middle;
 	height: 1.5em;
 	float:left;
-	margin-right: .5em;
 }
-
+.sharing .network_label{
+	margin-right: .8em;
+}
 .sharing a {
+	color: black;
 	text-decoration: none;
 }
 
 .sharing a:hover,
+.sharing a:link,
 .sharing a:focus,
 .sharing a:active,
 .sharing a:visited {
+	color: black;
 	background-color: transparent;
 }
 
@@ -27,13 +31,4 @@
 	position: absolute !important;
 	top: -9999px !important;
 	left: -9999px !important;
-}
-
-/*------------------------------------*\
-    SVG Sprite Icons
-\*------------------------------------*/
-.s-icon {
-	fill: currentColor;
-	width: 1em;
-	height: 1em;
 }
