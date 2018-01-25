@@ -47,7 +47,7 @@ function socialshare_insert_head_css($flux) {
 	// Base styles
 	$styles = '<link rel="stylesheet" type="text/css" href="' . find_in_path('css/socialshare.css') . '" />' . "\n";
 	if (lire_config('socialshare/method_insert',null,true)=='iconfont') {
-			$fontface = fontface_declaration(array(
+			$fontface = socialshare_fontface_declaration(array(
 				'family'=>'socialshare',
 				'file'=>'socialshare',
 				'weight'=>'normal',
