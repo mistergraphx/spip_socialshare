@@ -1,6 +1,6 @@
 
-[class^="s-icon-"]:before, [class*=" s-icon-"]:before {
- font-family: "socialshare";
+.s-icon:before {
+ font-family: "socialshare" !important;
  font-style: normal;
  font-weight: normal;
  speak: none;

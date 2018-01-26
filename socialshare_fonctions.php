@@ -37,7 +37,7 @@ function calculer_balise_SOCIAL_ICON($social_network){
 	$class = $network['icon_class'];
 	$size = 8;
 	if(lire_config('socialshare/method_insert')=='svg_symbols'){
-		$markup = "<svg class=\"$class\" viewBox=\"0 0 4 4\"><use xlink:href=\"#$social_network\"></use></svg>";
+		$markup = "<svg class=\"$class\" viewBox=\"0 0 32 32\"><use xlink:href=\"#$social_network\"></use></svg>";
 	}else{
 		$markup = "<span class=\"$class\" aria-hidden=\"true\"></span>";
 	}
