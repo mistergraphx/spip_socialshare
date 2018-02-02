@@ -118,7 +118,7 @@ function lister_partages() {
 		),
 		'googleplus' => array(
 			'label'=> 'Google+',
-			'sharing_url'=> 'https://plus.google.com/share?url=@url@',
+			'sharing_url'=> "https://plus.google.com/share?url=@url@",
 			'icon_class'=> 's-icon s-icon-googleplus'
 		),
 		'pinterest' => array(

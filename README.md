@@ -3,7 +3,7 @@
 * Ajoute au plugin Menu des boutons de partage
 * Pipeline pour ajouter ou modifier des reseaux sociaux depuis un plugin ou skel
 * Liste utilisable indépendament du menu
-* Sprites svg et png
+* Sprites svg ou icon font
 * Détection du support svg
 
 Le plugin ne gère pas les métas necessaires au réseaux sociaux pour correctement remplir les informations de partage.
@@ -11,15 +11,14 @@ Le plugin ne gère pas les métas necessaires au réseaux sociaux pour correctem
 Elles sont donc à gérer soit par vous même dans vos squelettes, ou en utilisant [le plugin meta-plus](https://contrib.spip.net/Metas-4845)
 
 
-## Personalisation
+## Gestion des icones :
 
-### Assets, css, svg, png
+Le plugin propose en configuration, trois méthodes de gestion des icones.
 
-le plugin inssère les css nécessaires, l'insertion est désactivable dans la configuration du plugin, dans le cas d'un set d'icone externe.
+- Pas d'insertion : tout est géré par le thème, les classes css peuvent êtres adaptés via la pipeline dans le cas d'un set comme font-awesome.
+- Sprite svg : un sprite svg, est insséré après la balise `<body>` sur les pages ou les boutons de partages sont présents. Une balise génère le markup `<svg>`, permettant donc l'utilisation de toutes les propriétées css3 svg (fill, stroke) sur chacune des icones.
+- icon font : une icone font est insséré et utilisé, le fichier de config fontello permet de pouvoir générer sa propre icon font si besoin.
 
-Ajouter , personaliser les logos/icones des liens de partage
-
-Le sprite svg ainsi que le sprite png (si vous souhaitez gérer les navigateurs ne supportant pas le svg), sont surchargeables depuis le dossier squelette en créant vos propres images social_icons.png.
 
 ### Description d'un réseaux
 
@@ -104,6 +103,10 @@ https://zone.spip.org/trac/spip-zone/browser/_plugins_/logo_auto/branches/logo_a
 
 ## Sources
 
+OpenGraph :
+* https://snook.ca/archives/html_and_css/open-graph-and-sharing-tags
+
+Sharers :
 * https://developers.google.com/+/web/share/#sharelink
 * https://simplesharebuttons.com/html-share-buttons/
 * https://github.com/bradvin/social-share-urls
@@ -140,6 +143,18 @@ Donc l'url serait :
 
 
 ## Changelogs
+
+1.1.0 :
+Changement de stratégie de gestion des icones.
+
+Ajout d'une balise gérant le markup, soit `svg` soit `span`, pour gérer la bascule entre les trois modes.
+
+On propose trois méthodes d'insertion :
+
+- Pas d'insertion : tout est géré par le thème, les classes css peuvent êtres adaptés via la pipeline dans le cas d'un set comme font-awesome.
+- Sprite svg : un sprite svg, est insséré après la balise `<body>` sur les pages ou les boutons de partages sont présents. Une balise génère le markup `<svg>`, permettant donc l'utilisation de toutes les propriétées css3 svg (fill, stroke) sur chacune des icones.
+- icon font : une icone font est insséré et utilisé, le fichier de config fontello permet de pouvoir générer sa propre icon font si besoin.
+
 
 1.0.6 :
 
