@@ -1,0 +1,71 @@
+$base-spacing: 1.5em !default;
+$small-spacing: $base-spacing / 2 !default;
+$ss-base-link-color: black !default;
+$ss-base-link-background: transparent !default;
+// Layout
+.sharing ul li {
+	display: inline-block;
+}
+
+.sharing .network_label,
+.sharing .s-icon {
+	display: table-cell;
+	vertical-align: middle;
+	height: 1.5em;
+	float:left;
+}
+
+.sharing .network_label{
+	margin-right: $small-spacing;
+}
+.sharing .socialshare a {
+	color: $ss-base-link-color;
+	text-decoration: none;
+	&:hover,
+	&:link,
+	&:focus,
+	&:active,
+	&:visited {
+		color: $ss-base-link-color;
+		background-color: $ss-base-link-background;
+	}
+}
+
+.sharing.only-icons .network_label,
+.sharing.fixed-left .network_label {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	transition: left .5s ease-in-out;
+}
+
+.sharing.fixed-left {
+
+	position: fixed;
+	top:35%;
+	left:0;
+
+ 	.socialshare {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.socialshare li {
+		padding: .25em;
+	}
+
+	.s-icon{
+		height: 2rem;
+	}
+
+	.socialshare li:hover .network_label {
+		position: relative;
+		top: $small-spacing;
+		left:0;
+	}
+
+	.socialshare .network_label {
+		margin-left: $small-spacing ;
+		margin-right: 0;
+	}
+}
