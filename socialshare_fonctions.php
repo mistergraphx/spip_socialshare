@@ -126,6 +126,11 @@ function lister_partages() {
 			'sharing_url'=> 'https://www.pinterest.com/pin/create/button/?url=@url@&media=@media@',
 			'icon_class'=> 's-icon s-icon-pinterest'
 		),
+		'seenthis' => array(
+			'label'=> 'SeenThis',
+			'sharing_url'=> 'https://www.seenthis.net/#ajouter=@title@&url_site=@url@&logo=@media@',
+			'icon_class'=> 's-icon s-icon-seenthis'
+		),
 	);
 
 	if(is_array(pipeline('social_networks'))) {
