@@ -53,6 +53,22 @@
 				</B_networks>
 			</fieldset>
 
+			<fieldset clas="fieldset editer-groupe">
+				<h3 class="legend">Suivez nous</h3>
+				[(#SET{social_profiles, #VAL|lister_partages })]
+				<B_followUs>
+					<ul class="editer-groupe">
+					<BOUCLE_followUs(DATA){source table, #GET{social_profiles}}>
+						<!-- #VALEUR -->
+						<li class="editer editer-social-page-[(#CLE)]">
+							<label for="social-page-[(#CLE)]">[(#VALEUR{label})]</label>
+							<input type="text" name="social-page-#CLE" id="social-page-[(#CLE)]" value="#ENV{social-page-#CLE}" />
+						</li>
+					</BOUCLE_followUs>
+					</ul>
+				</B_followUs>
+			</fieldset>
+
 			<input type="hidden" name="_meta_casier" value="socialshare"/>
 			<p class="boutons">
 				<span class="image_loading">&nbsp;</span><input type="submit" class="submit" value="<:bouton_enregistrer:>"/>
