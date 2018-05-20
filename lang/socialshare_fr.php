@@ -19,5 +19,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'share_facebook'	=> 'Partagez sur Facebook',
 	'share_twitter'	=> 'Partagez sur Twitter',
 	'share_google_plus'	=> 'Partagez sur Google+',
+	'suivez_nous_sur'	=> 'Suivez nous sur @network@',
 
 );

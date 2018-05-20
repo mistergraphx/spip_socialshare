@@ -5,6 +5,7 @@
 	<icone>menus/icn/liste_events.png</icone>
 	<parametre nom="titre" class="multilang" label="menus:entree_titre" />
 	<parametre nom="css" label="menus:entree_css" />
+	<parametre nom="masquer_labels" label="Masquer les labels" />
 	<parametre nom="afficher_twitter" label="Afficher Twitter" />
 	<parametre nom="afficher_facebook" label="Afficher Facebook" />
 	<parametre nom="afficher_google+" label="Afficher Google+1" />

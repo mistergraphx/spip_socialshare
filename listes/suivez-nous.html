@@ -4,9 +4,9 @@
 <BOUCLE_listData(DATA){source table, #GET{social_pages}}>
 	[(#CONFIG{socialshare/social-page-#CLE}|oui)
 	<li class="social-page #CLE">
- 	<a href="[(#VALEUR)]" title="<:socialshare:suivez_nous_sur{network=#VALEUR{label}}:>" target="_blank" rel="nofollow noopener">
+ 	<a href="[(#CONFIG{socialshare/social-page-#CLE})]" title="<:socialshare:suivez_nous_sur{network=#VALEUR{label}}:>" target="_blank" rel="nofollow noopener">
 			[(#SOCIAL_ICON{#CLE})]
-			[<span class="social-network[ (#ENV{masquer_labels,oui}|oui)visuallyhidden]">(#VALEUR{label})</span>]
+			[<span class="social-network[ (#ENV{afficher_label,non}|?{visuallyhidden, ''})]">(#VALEUR{label})</span>]
 		</a>
 	</li>]
 </BOUCLE_listData>

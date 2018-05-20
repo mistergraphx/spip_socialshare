@@ -1,0 +1,13 @@
+[(#ENV{appel_formulaire}|oui)
+	<div class="titre">Suivez nous</div>
+	<div class="infos">Liens vers les réseaux sociaux</div>
+]
+<BOUCLE_appel(CONDITION){si #ENV{appel_menu}|oui}>
+[(#SET{afficher_titre,[(#ENV{afficher_titre})]})]
+[(#SET{afficher_label,[(#ENV{afficher_label,non})]})]
+<li class="menu-entree item[ (#ENV{css})]">
+	[(#GET{afficher_titre}|oui)
+		[<h3>(#ENV{titre})</h3>]
+	]
+	<INCLURE{fond=listes/suivez-nous,afficher_label=#GET{afficher_label}, env} />
+</BOUCLE_appel>

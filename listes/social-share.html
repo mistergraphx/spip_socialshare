@@ -7,11 +7,9 @@
 <BOUCLE_listData(DATA){source table, #GET{social_networks}}>
 	[(#CONFIG{socialshare/#CLE}|oui)
 	<li>
-		<a  href="[(#VALEUR{sharing_url}|replace{'@url@',#GET{url}}|replace{'@title@',#GET{title}}|replace{'@media@',#GET{media}})]"
-			class="js-social-share" title="<:socialshare:partager_sur{network=#VALEUR{label}}:>"
-			target="_blank" rel="nofollow noopener">
+ 	<a href="[(#VALEUR{sharing_url}|replace{'@url@',#GET{url}}|replace{'@title@',#GET{title}}|replace{'@media@',#GET{media}})]" class="js-social-share" title="<:socialshare:partager_sur{network=#VALEUR{label}}:>" target="_blank" rel="nofollow noopener">
 			[(#SOCIAL_ICON{#CLE})]
-			[<span class="network_label">(#VALEUR{label})</span>]
+			[<span class="network_label[ (#ENV{masquer_labels,oui}|oui)visuallyhidden]">(#VALEUR{label})</span>]
 		</a>
 	</li>]
 </BOUCLE_listData>

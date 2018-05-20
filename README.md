@@ -1,8 +1,8 @@
 # Social share
 
-* Ajoute au plugin Menu des boutons de partage
+* Menu de partage et follow
 * Pipeline pour ajouter ou modifier des reseaux sociaux depuis un plugin ou skel
-* Liste utilisable indépendament du menu
+* Liste utilisable indépendament des menus
 * Sprites svg ou icon font
 * Détection du support svg
 
@@ -40,12 +40,12 @@ les variables uilisables pour construire les liens de partage :
 | `@title@` | Titre du partage |
 | `@media@` | Un media |
 
-On peut donc ajouter ensuite depuis la pipeline ses propres réseaux de partage, ils seront activables depuis la config du plugin.
+On peut donc injecter dans la pipeline ses propres réseaux de partage, ils seront activables depuis la config du plugin, ou mis ajour sir seulement certaines informations sont transmise.
 
 ### Pipeline `social_networks()`
 
 
-Ajouter au paquet xml de votre plugin/theme
+#### Ajouter au paquet xml de votre plugin/theme
 
 ```xml
 <pipeline nom="social_networks" inclure="prefix_plugin_pipelines.php"/>
@@ -74,23 +74,63 @@ function prefix_plugin_social_networks($flux){
 	);
 ```
 
+#### Depuis votre fichier `mes_options`
 
+```php
+$GLOBALS['spip_pipeline']['social_networks'] = "|my_social_networks";
+
+function my_social_networks($flux){
+
+	$flux['social_networks']  = array(
+		'facebook' => array(
+			'icon_class'=> 'icon icon-facebook'
+		),
+		'twitter' => array(
+			'icon_class'=> 'icon icon-twitter'
+		),
+		'googleplus' => array(
+			'icon_class'=> 'icon icon-gplus'
+		),
+		'pinterest' => array(
+			'icon_class'=> 'icon icon-pinterest'
+		),
+	);
+
+	return $flux;
+}
+```
 
 ## Utilisation dans un squelette
 
-### Liste des boutons de partage
+### Listes
+
+Boutons de partage
 
 ```html
-[<div class="sharing">(#INCLURE{fond=listes/social-share,url=#URL_ARTICLE,title=#TITRE,media=#LOGO_ARTICLE,env})</div>]
+[<div class="sharing">
+(#INCLURE{fond=listes/social-share,
+	url=#URL_ARTICLE,
+	title=#TITRE,
+	media=#LOGO_ARTICLE,env})
+</div>]
 ```
 
-### Appel du menu de partage
+Boutons Suivez-nous
 
-Passer en paramètre l'url de l'objet a partager
+```
+<INCLURE{fond=listes/suivez-nous, afficher_label=oui,env}/>
+```
+
+### Menus
+
+Si vous utilisez le plugin menu, un menu est fourni, vous pouvez passer en paramètre l'url de l'objet a partager, son titre, un media (pour les réseaux le supportant - ex: pinterest).
 
 ```html
 [(#INCLURE{fond=inclure/menu,identifiant=nav_share, url=#URL_PRODUIT, media=#LOGO_ARTICLE env})]
 ```
+
+
+
 
 ## Plugins complémentaires
 

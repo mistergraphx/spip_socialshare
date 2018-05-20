@@ -135,10 +135,7 @@ function lister_partages() {
 
 	if(is_array(pipeline('social_networks'))) {
 		$user_sharers= pipeline('social_networks');
-
-
 		$sharers = array_replace_recursive($default,$user_sharers['social_networks']);
-
 		return $sharers;
 	}
 
