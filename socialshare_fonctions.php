@@ -131,6 +131,11 @@ function lister_partages() {
 			'sharing_url'=> 'https://www.seenthis.net/#ajouter=@title@&url_site=@url@&logo=@media@',
 			'icon_class'=> 's-icon s-icon-seenthis'
 		),
+		'youtube' => array(
+			'label'=> 'Youtube',
+			'sharing_url'=> '',
+			'icon_class'=> 's-icon s-icon-youtube'
+		),
 	);
 
 	if(is_array(pipeline('social_networks'))) {
