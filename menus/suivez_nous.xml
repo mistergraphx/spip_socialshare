@@ -7,8 +7,4 @@
 	<parametre nom="afficher_titre" label="Afficher le titre" />
 	<parametre nom="afficher_label" label="Afficher le nom du réseau" />
 	<parametre nom="css" label="menus:entree_css" />
-	<parametre nom="url_profil_twitter" label="Url vers votre profil Twitter" />
-	<parametre nom="url_profil_facebook" label="Url vers votre profil Facebook" />
-	<parametre nom="url_profil_google+" label="Url vers votre profil Google+1" />
-	<parametre nom="url_profil_github" label="Url vers votre profil GitHub" />
 </entree>

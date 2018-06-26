@@ -8,14 +8,13 @@
  * @licence    GNU/GPL
  * @package    SPIP\social-share\Pipelines
  */
-
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 
 function socialshare_affichage_final($page){
 	// ne pas insérer le svg sur toute les pages
 	// si ce n'est pas nécessaire
-	if(strpos($page,'class="socialshare"',0)){
+	if(strpos($page,'class="socialshare',0)){
 			// Methode insertion svg symbols
 			// on place le svg après la balise body
 			include_spip('inc/config');

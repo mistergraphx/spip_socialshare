@@ -15,9 +15,19 @@ Elles sont donc à gérer soit par vous même dans vos squelettes, ou en utilisa
 
 Le plugin propose en configuration, trois méthodes de gestion des icones.
 
-- Pas d'insertion : tout est géré par le thème, les classes css peuvent êtres adaptés via la pipeline dans le cas d'un set comme font-awesome.
-- Sprite svg : un sprite svg, est insséré après la balise `<body>` sur les pages ou les boutons de partages sont présents. Une balise génère le markup `<svg>`, permettant donc l'utilisation de toutes les propriétées css3 svg (fill, stroke) sur chacune des icones.
-- icon font : une icone font est insséré et utilisé, le fichier de config fontello permet de pouvoir générer sa propre icon font si besoin.
+### Pas d'insertion :
+
+Tout est géré par le thème, les classes css peuvent êtres adaptés via la pipeline dans le cas d'un set comme font-awesome.
+
+### Sprite svg :
+
+Un sprite svg, est insséré après la balise `<body>` sur les pages ou les boutons de partages sont présents (`class="socialshare`).
+
+Une balise génère le markup `<svg>`, permettant donc l'utilisation de toutes les propriétées css3 svg (fill, stroke) sur chacune des icones.
+
+### icon font :
+
+Une icone font est insséré et utilisé, le fichier de config fontello permet de pouvoir générer sa propre icon font si besoin.
 
 
 ### Description d'un réseaux
@@ -32,7 +42,7 @@ Le plugin propose en configuration, trois méthodes de gestion des icones.
 
 ```
 
-les variables uilisables pour construire les liens de partage :
+les variables utilisables pour construire les liens de partage :
 
 | Variable | Description |
 |--|--|
@@ -40,7 +50,7 @@ les variables uilisables pour construire les liens de partage :
 | `@title@` | Titre du partage |
 | `@media@` | Un media |
 
-On peut donc injecter dans la pipeline ses propres réseaux de partage, ils seront activables depuis la config du plugin, ou mis ajour sir seulement certaines informations sont transmise.
+On peut donc injecter dans la pipeline ses propres réseaux de partage, ils seront activables depuis la configuration du plugin, ou mis a jour si seulement certaines informations sont transmise.
 
 ### Pipeline `social_networks()`
 
@@ -118,7 +128,9 @@ Boutons de partage
 Boutons Suivez-nous
 
 ```
+<div class="sharing">
 <INCLURE{fond=listes/suivez-nous, afficher_label=oui,env}/>
+</div>
 ```
 
 ### Menus

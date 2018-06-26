@@ -1,6 +1,6 @@
 [(#SET{social_pages, #VAL|lister_partages })]
 <B_listData>
-<ul class="suivez-nous">
+<ul class="socialshare suivez-nous">
 <BOUCLE_listData(DATA){source table, #GET{social_pages}}>
 	[(#CONFIG{socialshare/social-page-#CLE}|oui)
 	<li class="social-page #CLE">
