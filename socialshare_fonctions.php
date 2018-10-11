@@ -136,6 +136,11 @@ function lister_partages() {
 			'sharing_url'=> '',
 			'icon_class'=> 's-icon s-icon-youtube'
 		),
+		'github' => array(
+			'label'=> 'GitHub',
+			'sharing_url'=> '',
+			'icon_class'=> 's-icon s-icon-github'
+		)
 	);
 
 	if(is_array(pipeline('social_networks'))) {
