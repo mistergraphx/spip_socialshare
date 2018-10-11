@@ -14,7 +14,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 function socialshare_affichage_final($page){
 	// ne pas insérer le svg sur toute les pages
 	// si ce n'est pas nécessaire
-	if(strpos($page,'class="socialshare',0) === true){
+	if(strpos($page,'class="socialshare',0) == true){
 			// Methode insertion svg symbols
 			// on place le svg après la balise body
 			include_spip('inc/config');
@@ -22,11 +22,10 @@ function socialshare_affichage_final($page){
 				$body = preg_match("/(<body.*?>)/u", $page, $matches);
 				if ( $body_pos = strpos($page,$matches[0]) + strlen($matches[0])){
 					lire_fichier(find_in_path('images/socialshare_symbols.svg'),$svg);
-					$page = substr_replace($page, trim($svg,'') , $body_pos, 0);
+					$page = substr_replace($page, trim(preg_replace('/[\n\t]+/','',$svg)) , $body_pos, 0);
 				}
 			}
 	}
-
 	return $page;
 }
 
