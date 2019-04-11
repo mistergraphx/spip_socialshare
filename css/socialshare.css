@@ -1,8 +1,11 @@
 .sharing ul li {
   display: inline-block;
 }
-
-.sharing .network_label, .sharing .s-icon {
+/* .sharing svg{
+  fill: white;
+} */
+.sharing .network_label,
+.sharing .s-icon {
   display: table-cell;
   vertical-align: middle;
   height: 1.5em;
@@ -18,7 +21,9 @@
   text-decoration: none;
 }
 
-.sharing .socialshare a:hover, .sharing .socialshare a:link, .sharing .socialshare a:focus, .sharing .socialshare a:active, .sharing .socialshare a:visited {
+.sharing .socialshare a:hover,
+.sharing .socialshare a:link,
+.sharing .socialshare a:focus, .sharing .socialshare a:active, .sharing .socialshare a:visited {
   color: black;
   background-color: transparent;
 }

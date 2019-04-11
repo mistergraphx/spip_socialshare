@@ -66,6 +66,8 @@ function socialshare_insert_head_css($flux) {
 	return $flux;
 }
 
+
+
 function socialshare_ieconfig_metas($table){
 	$table['socialshare']['titre'] = _T('socialshare:socialshare_titre');
 	$table['socialshare']['icone'] = 'prive/themes/spip/images/socialshare-16.png';

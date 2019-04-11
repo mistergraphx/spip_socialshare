@@ -27,7 +27,48 @@ Une balise génère le markup `<svg>`, permettant donc l'utilisation de toutes l
 
 ### icon font :
 
-Une icone font est insséré et utilisé, le fichier de config fontello permet de pouvoir générer sa propre icon font si besoin.
+Une icone font est inséré et utilisé, le fichier de config fontello permet de pouvoir générer sa propre icon font si besoin.
+
+### Modèles
+
+
+`<suiveznous|afficher_label=non>`
+
+afficher_label (oui !) : affiche le nom du réseau sinon `.visuallyhidden`
+
+## Utilisation dans un squelette
+
+### Listes
+
+Boutons de partage
+
+```html
+[<div class="sharing">
+(#INCLURE{fond=listes/social-share,
+	url=#URL_ARTICLE,
+	title=#TITRE,
+	media=#LOGO_ARTICLE,env})
+</div>]
+```
+
+Boutons Suivez-nous
+
+```
+<div class="sharing">
+<INCLURE{fond=listes/suivez-nous, afficher_label=oui,env}/>
+</div>
+```
+
+### Menus
+
+Si vous utilisez le plugin menu, un menu est fourni, vous pouvez passer en paramètre l'url de l'objet a partager, son titre, un media (pour les réseaux le supportant - ex: pinterest).
+
+```html
+[(#INCLURE{fond=inclure/menu,identifiant=nav_share, url=#URL_PRODUIT, media=#LOGO_ARTICLE env})]
+```
+
+
+
 
 
 ### Description d'un réseaux
@@ -109,39 +150,6 @@ function my_social_networks($flux){
 	return $flux;
 }
 ```
-
-## Utilisation dans un squelette
-
-### Listes
-
-Boutons de partage
-
-```html
-[<div class="sharing">
-(#INCLURE{fond=listes/social-share,
-	url=#URL_ARTICLE,
-	title=#TITRE,
-	media=#LOGO_ARTICLE,env})
-</div>]
-```
-
-Boutons Suivez-nous
-
-```
-<div class="sharing">
-<INCLURE{fond=listes/suivez-nous, afficher_label=oui,env}/>
-</div>
-```
-
-### Menus
-
-Si vous utilisez le plugin menu, un menu est fourni, vous pouvez passer en paramètre l'url de l'objet a partager, son titre, un media (pour les réseaux le supportant - ex: pinterest).
-
-```html
-[(#INCLURE{fond=inclure/menu,identifiant=nav_share, url=#URL_PRODUIT, media=#LOGO_ARTICLE env})]
-```
-
-
 
 
 ## Plugins complémentaires

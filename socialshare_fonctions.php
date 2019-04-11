@@ -140,6 +140,11 @@ function lister_partages() {
 			'label'=> 'GitHub',
 			'sharing_url'=> '',
 			'icon_class'=> 's-icon s-icon-github'
+		),
+		'instagram' => array(
+			'label'=> 'Instagram',
+			'sharing_url'=> '',
+			'icon_class'=> 's-icon s-icon-instagram'
 		)
 	);
 

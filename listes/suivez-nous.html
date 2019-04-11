@@ -1,5 +1,4 @@
 [(#SET{social_pages, #VAL|lister_partages })]
-<B_listData>
 <ul class="socialshare suivez-nous">
 <BOUCLE_listData(DATA){source table, #GET{social_pages}}>
 	[(#CONFIG{socialshare/social-page-#CLE}|oui)
@@ -11,5 +10,4 @@
 	</li>]
 </BOUCLE_listData>
 </ul>
-</B_listData>
 #FILTRE{trim}

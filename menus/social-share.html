@@ -10,7 +10,7 @@
 	<div class="infos">Liens de partage</div>
 ]
 <BOUCLE_appel(CONDITION){si #ENV{appel_menu}|oui}>
-<li class="menu-entree item[ (#ENV{css})]">
+<li class="menu-entree item sharing[ (#ENV{css})]">
 	[<a href="#" class="sharing-title">(#ENV{titre})</a>]
 	<INCLURE{fond=listes/social-share, title=#GET{title}, url=#GET{url}, media=#GET{media},masquer_label=#ENV{masquer_labels}, env} />
 </BOUCLE_appel>

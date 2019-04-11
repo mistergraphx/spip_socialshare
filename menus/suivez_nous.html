@@ -5,7 +5,7 @@
 <BOUCLE_appel(CONDITION){si #ENV{appel_menu}|oui}>
 [(#SET{afficher_titre,[(#ENV{afficher_titre})]})]
 [(#SET{afficher_label,[(#ENV{afficher_label,non})]})]
-<li class="menu-entree item[ (#ENV{css})]">
+<li class="menu-entree item sharing[ (#ENV{css})]">
 	[(#GET{afficher_titre}|oui)
 		[<h3>(#ENV{titre})</h3>]
 	]
