@@ -204,6 +204,11 @@ Donc l'url serait :
 
 ## Changelogs
 
+1.1.8
+
+- changer l'ordre des font dans la déclaration fontface générée.
+https://blog.dareboost.com/fr/2015/08/comment-utiliser-fontes/#meilleur_format
+
 1.1.0 :
 Changement de stratégie de gestion des icones.
 

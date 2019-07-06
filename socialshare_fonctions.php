@@ -66,7 +66,7 @@ function calculer_balise_SOCIAL_ICON($social_network){
 
 */
 
-function socialshare_fontface_declaration($font, $formats = array('.woff'=>'woff','.woff2'=>'woff2','.ttf'=>'truetype')){
+function socialshare_fontface_declaration($font, $formats = array('.woff2'=>'woff2','.woff'=>'woff','.ttf'=>'truetype')){
 
 	$default = array(
 		'family'=>'Dutissimo',
